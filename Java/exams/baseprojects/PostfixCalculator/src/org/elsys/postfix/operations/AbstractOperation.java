@@ -23,4 +23,16 @@ public abstract class AbstractOperation implements Operation {
 		return token;
 	}
 
+	public void postRes(double result){
+		getCalculator().addValue(result);
+		System.out.println(result);
+	}
+	
+	public  Double[] getVal(int NumVal){
+		Double[] val = new Double[NumVal];
+		for (int i = 0; i < NumVal; i++){
+			val[i] = getCalculator().popValue();
+		}
+		return val;
+	}
 }

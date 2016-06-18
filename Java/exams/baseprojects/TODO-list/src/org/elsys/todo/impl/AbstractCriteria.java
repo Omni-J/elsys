@@ -6,11 +6,12 @@ import org.elsys.todo.Task;
 abstract class AbstractCriteria implements Criteria {
 
 	@Override
+	//This one
 	public Criteria and(Criteria other) {
-		// TODO Auto-generated method stub
-		return null;
+		return new AndCriteria(this, (AbstractCriteria) other);
 	}
 
+	
 	@Override
 	public Criteria or(Criteria other) {
 		// TODO Auto-generated method stub

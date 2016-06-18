@@ -32,11 +32,17 @@ public class TodoListImpl implements TodoList {
 	public Boolean isCompleted() {
 		return tasks.stream().allMatch(task -> task.getStatus() == Status.DONE);
 	}
-
+	//This one
 	@Override
 	public Double percentageCompleted() {
-		// TODO Auto-generated method stub
-		return null;
+		int done = 0;
+		for(Task task: tasks){
+			if (task.getStatus() == Status.DONE){
+				done++;
+			}
+		}
+		
+		return (double)(done/tasks.size() * 100);
 	}
 
 	@Override

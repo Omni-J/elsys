@@ -10,11 +10,9 @@ public class Plus extends AbstractOperation implements Operation {
 
 	@Override
 	public void calculate() {
-		Double value1 = getCalculator().popValue();
-		Double value2 = getCalculator().popValue();
-		double result = value1 + value2;
-		getCalculator().addValue(result);
-		System.out.println(result);
+		Double[] res = this.getVal(2);
+		double result = res[0] + res[1];
+		this.postRes(result);
 	}
 
 }

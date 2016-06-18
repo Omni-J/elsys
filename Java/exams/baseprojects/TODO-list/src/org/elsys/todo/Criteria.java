@@ -1,10 +1,16 @@
 package org.elsys.todo;
 
 import org.elsys.todo.impl.StatusCriteria;
+import org.elsys.todo.impl.TagsCriteria;
 
 /**
  * Interface used for filtering {@link TodoList}s.
  */
+
+/*
+ * Here
+ * */
+
 public interface Criteria {
 
 	/**
@@ -37,9 +43,11 @@ public interface Criteria {
 	 * @param tags
 	 * @return the new Criteria instance
 	 */
+	
+	// this one 
+	
 	public static Criteria tags(String[] tags) {
-		// TODO implement me
-		return null;
+		return new TagsCriteria(tags);
 	}
 
 	/**
